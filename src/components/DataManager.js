@@ -22,24 +22,6 @@ const DataManager = () => {
     alert(`Added ${sampleJobs.length} sample job applications!`);
   };
 
-  const handleClearAllData = () => {
-    const confirm = window.confirm(
-      'This will permanently delete ALL job applications. This action cannot be undone. Are you sure?'
-    );
-    
-    if (confirm) {
-      const doubleConfirm = window.confirm(
-        'Are you absolutely sure? This will delete all your data permanently.'
-      );
-      
-      if (doubleConfirm) {
-        // Clear all jobs by setting empty array
-        localStorage.removeItem('jobApplications');
-        window.location.reload(); // Reload to reset state
-      }
-    }
-  };
-
   return (
     <div className="bg-white rounded-xl shadow-soft border border-gray-200 p-6">
       <div className="flex items-center space-x-3 mb-6">
@@ -55,42 +37,27 @@ const DataManager = () => {
           </p>
           <button
             onClick={handleGenerateSampleData}
-            className="btn-primary text-sm"
+            className="btn-primary text-sm flex flex-row items-center"
           >
             <Database className="w-4 h-4 mr-2" />
             Generate Sample Jobs
           </button>
         </div>
 
-        <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-          <h3 className="font-medium text-green-900 mb-2">Export Data</h3>
-          <p className="text-sm text-green-700 mb-3">
-            Download all your job applications as a JSON file for backup.
-          </p>
-          <button
-            onClick={actions.exportJobs}
-            className="btn-secondary text-sm"
-            disabled={jobs.length === 0}
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Export All Data
-          </button>
-        </div>
-
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+        {/* <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
           <h3 className="font-medium text-red-900 mb-2">Clear All Data</h3>
           <p className="text-sm text-red-700 mb-3">
             Permanently delete all job applications. This cannot be undone.
           </p>
           <button
             onClick={handleClearAllData}
-            className="btn-danger text-sm"
+            className="btn-danger text-sm flex flex-row items-center"
             disabled={jobs.length === 0}
           >
             <Trash2 className="w-4 h-4 mr-2" />
             Clear All Data
           </button>
-        </div>
+        </div> */}
       </div>
 
       {jobs.length > 0 && (
