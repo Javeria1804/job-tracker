@@ -134,6 +134,73 @@ const Dashboard = () => {
         </div>
       )}
 
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-200 group">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-600 mb-1">Total Applications</p>
+              <p className="text-3xl font-bold text-gray-900 mb-2">{stats.total}</p>
+              <div className="flex items-center text-sm text-gray-500">
+                <TrendingUp className="w-3 h-3 mr-1" />
+                All time
+              </div>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <Users className="w-6 h-6 text-white" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-200 group">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-600 mb-1">In Progress</p>
+              <p className="text-3xl font-bold text-gray-900 mb-2">{stats.interviewing}</p>
+              <div className="flex items-center text-sm text-yellow-600">
+                <Clock className="w-3 h-3 mr-1" />
+                Active interviews
+              </div>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <Clock className="w-6 h-6 text-white" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-200 group">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-600 mb-1">Offers Received</p>
+              <p className="text-3xl font-bold text-gray-900 mb-2">{stats.offer}</p>
+              <div className="flex items-center text-sm text-green-600">
+                <Award className="w-3 h-3 mr-1" />
+                Success stories
+              </div>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <Award className="w-6 h-6 text-white" />
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-200 group">
+          <div className="flex items-center justify-between">
+            <div className="flex-1">
+              <p className="text-sm font-medium text-gray-600 mb-1">Response Rate</p>
+              <p className="text-3xl font-bold text-gray-900 mb-2">{stats.responseRate}%</p>
+              <div className="flex items-center text-sm text-purple-600">
+                <TrendingUp className="w-3 h-3 mr-1" />
+                Overall performance
+              </div>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <TrendingUp className="w-6 h-6 text-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Actions and Filters */}
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">

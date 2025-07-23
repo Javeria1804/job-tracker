@@ -92,43 +92,6 @@ const Layout = () => {
             </button>
           </div>
 
-          {/* Stats Cards */}
-          <div className="p-6 bg-gradient-to-b from-primary-50 to-white">
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-                <div className="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-lg mx-auto mb-2">
-                  <Users className="w-5 h-5 text-blue-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">{stats.total}</div>
-                <div className="text-sm text-gray-600">Total Jobs</div>
-              </div>
-              <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-                <div className="flex items-center justify-center w-10 h-10 bg-green-100 rounded-lg mx-auto mb-2">
-                  <Award className="w-5 h-5 text-green-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">{stats.Offer || 0}</div>
-                <div className="text-sm text-gray-600">Offers</div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-                <div className="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-lg mx-auto mb-2">
-                  <Clock className="w-5 h-5 text-yellow-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">{stats.Interviewing || 0}</div>
-                <div className="text-sm text-gray-600">Interviewing</div>
-              </div>
-              <div className="bg-white rounded-xl p-4 text-center shadow-sm border">
-                <div className="flex items-center justify-center w-10 h-10 bg-purple-100 rounded-lg mx-auto mb-2">
-                  <TrendingUp className="w-5 h-5 text-purple-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">{((stats.Offer || 0) / Math.max(stats.total, 1) * 100).toFixed(0)}%</div>
-                <div className="text-sm text-gray-600">Success Rate</div>
-              </div>
-            </div>
-          </div>
-
           {/* Navigation */}
           <nav className="flex-1 px-6 py-4 space-y-2">
             <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
